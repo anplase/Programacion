@@ -1,0 +1,35 @@
+se crea una carpeta en el disco duro donde se va a trabajar y en la consola desde ese directorio se escribe git init, esto lo que hace es crear un directorio .git para empezar a trabajar con los commit. Está oculto por cierto.
+
+para incluir los archivos en los commit hay que poner git add y el nombre del archivo, si se pone git add .   lo que hace es poner todos los archivos en los commit, Normalmente se suele poner el  git add LICENSE README.md que son los dos ficheros que deben de estar siempre. y de esta forma como está escrito. git add lo que suele hacer es registrar en el indice lo ficheros nuevos o modificados.
+
+git reset lo que hace es lo contrario a git add, que es quitarlo del indice.
+
+git commit lo que hace es generar un nuevo commit con lo registrado en el indice.
+git commit -m "descripcion"     descripcion del commit.
+
+De esta forma sigue un flujo; Primero se crean lo ficheros en el directorio de trabajo de nuestra maquina "se ha tenido que crear antes con git init la carpeta .git en nuestro directorio local", Segundo se incluyen en el indice los ficheros modificados o nuevos con git add .    Tercero se pasan a la nube con git commit que lo que hace es subir los ficheros que se tenian en el indice.
+
+
+
+
+con git status nos muestra como están los ficheros:
+	modified que están modificados con respecto al commit anterior
+	untracked que no existen en el commit anterior y se ven con ?? en rojo. quiere decir que no están en el indice.
+	staged que son ficheros nuevos o modificados que se han registrado para que vayan en le proximo commit y aparece con un A en verde
+
+con git status -s nos dan los resultados compatos y muy comodos
+
+
+git diff nos muestra los cambios de los ficheros modified del directorio de trabajo
+		si se le pasa el nombre del fichero nos lo mostrará solo si está en modified.
+
+git diff -cached nos muestra los cambios de los ficheros staged del directorio de trabajo
+		si se le pasa el nombre de un fichero nos lo mostrará solo si está en staged.
+
+git diff nos muestra en verde y con un + delante las que se han añadido y en rojo y con un - las que se han quitado, y en negro las que se han modificado "se han quitado o añadido lineas de codigo".
+
+git log --oneline muestra la historia de los commits
+
+HASTA AQUÍ TODO LO DICHO ES PARA TRABAJAR LOCALMENTE EN NUESTRO ORDENADOR Y NO EN LA NUBE.
+A PARTIR DE AQUÍ SE EXPLICA COMO SE HACE EN LA NUBE.
+

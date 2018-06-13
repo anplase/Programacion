@@ -1,0 +1,10 @@
+El programa lo que hace es lo siguiente:
+se le pasa el primer argumento y si está entre 1 y 12, 		mcal 3 muestra el mes 3 del año 2018
+las siglas en ingles del mes abreviadas, el mes en ingles 
+o en español pero con la primera letra en mayusculas y no 
+se le escribe año, considera que ese numero es el del año 
+acutal, en caso de que se le pase otro numero que sea 
+diferente a los indicados anteriormente, considerara que 
+es el año y mostrara el calendario anual de dicho año.
+En caso de que se le indique mes y año lo hara como lo podria 
+hacer el comando cal 

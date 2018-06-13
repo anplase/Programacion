@@ -1,0 +1,10 @@
+#!bin/bash
+#ejemplo del for basico
+PLANETAS="mercurio venus tierra martes jupiter saturno urano neptuno"
+echo "Planetas del sistema solar son:";echo
+
+for planeta in $PLANETAS
+do
+	echo $planeta
+done
+exit 0  

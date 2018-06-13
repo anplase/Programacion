@@ -1,0 +1,50 @@
+#!bin/bash
+#Antonio Plaza Ejercicio del tema 6
+
+
+case $1 in #en caso de que el primer argumento sea -help no pasa al siguiente y muestra la ayuda
+	
+	-help) #primer caso del priemr case
+		echo "El programa lo que hace es lo siguiente:"
+		echo "se le pasa el primer argumento y si está entre 1 y 12, 		mcal 3 muestra el mes 3 del año 2018"
+		echo "las siglas en ingles del mes abreviadas, el mes en ingles "
+		echo "o en español y no "
+		echo "se le escribe año, considera que ese numero es el del año "
+		echo "acutal, en caso de que se le pase otro numero que sea "
+		echo "diferente a los indicados anteriormente, considerara que "
+		echo "es el año y mostrara el calendario anual de dicho año."
+		echo "En caso de que se le indique mes y año lo hara como lo podria "
+		echo "hacer el comando cal ";;
+	*)if [ -z $2 ] 	#si el segundo valor de argumentos es nulo entonces escribimos el valor 
+	then			#del mes si están entre los doce primeros
+		case $1 in #este caso es para que si ingresamos el primer valor para que lo considere un mes
+			[123456789]) cal $1 2018;;
+			10) cal $1 2018;;
+			11) cal $1 2018;;
+			12) cal $1 2018;;
+			januari | jan | enero | ene) cal 1 2018;;	#Tambien admite el nombre del mes en ingles
+			february | feb | febrero | feb) cal 2 2018;;				#o las siglas en ingles del mes
+			march | mar | marzo | mar) cal 3 2018;;
+			april | apr | abril | abr) cal 4 2018;;
+			may | mayo) cal 5 2018;;
+			june | jun | junio) cal 6 2018;;
+			july | jul | julio) cal 7 2018;;
+			august | aug | agosto | ago) cal 8 2018;;
+			september | sep | septiembre) cal 9 2018;;
+			october | oct | octubre) cal 10 2018;;
+			november | nov | noviembre) cal 11 2018;;
+			december | dec | diciembre | dic) cal 12 2018;;
+			*) cal $1;;	#en caso de que no se reconozca el mes pues escribe el año
+			esac   									#Termina el case
+
+	elif [ $3 ] #Si el valor $3 no es nulo
+		then
+		echo "Se ha introducido más argumentos de los debidos">&2
+		echo "este argumento sobra:"$3 #Aquí escribo el valor del argumento que sobra
+
+	else
+		cal $1 $2   	#en caso de que le pasemos un segundo argumento lo hace normalmente con el cal
+
+	fi
+	;;
+esac 		#Termina el if
